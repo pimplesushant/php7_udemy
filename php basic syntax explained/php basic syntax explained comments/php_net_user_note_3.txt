@@ -1,0 +1,15 @@
+http://php.net/manual/en/language.basic-syntax.comments.php
+
+hcderaad at wanadoo dot nl, 2005-06-29 01:51
+
+Comments in PHP can be used for several purposes, a very interesting one being that you can generate API documentation directly from them by using PHPDocumentor (http://www.phpdoc.org/).
+
+Therefor one has to use a JavaDoc-like comment syntax (conforms to the DocBook DTD), example:
+<?php
+/**
+* The second * here opens the DocBook commentblock, which could later on<br>
+* in your development cycle save you a lot of time by preventing you having to rewrite<br>
+* major documentation parts to generate some usable form of documentation.
+*/
+?>
+Some basic html-like formatting is supported with this (ie <br> tags) to create something of a layout.

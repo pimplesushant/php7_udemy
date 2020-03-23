@@ -1,0 +1,9 @@
+http://php.net/manual/en/function.include.php
+
+snowyurik at gmail dot com, 2008-11-05 10:49
+
+This might be useful:
+<?php
+include $_SERVER['DOCUMENT_ROOT']."/lib/sample.lib.php";
+?>
+So you can move script anywhere in web-project tree without changes.

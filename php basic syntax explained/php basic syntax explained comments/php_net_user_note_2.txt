@@ -1,0 +1,11 @@
+http://php.net/manual/en/language.basic-syntax.comments.php
+
+magnesium dot oxide dot play+php at gmail dot com, 2013-10-10 10:02
+
+It is worth mentioning that, HTML comments have no meaning in PHP parser. So,
+
+<!-- comment
+<?php echo some_function(); ?>
+-->
+
+WILL execute some_function() and echo result inside HTML comment.

@@ -1,0 +1,32 @@
+http://php.net/manual/en/control-structures.goto.php
+
+chrisstocktonaz at gmail dot com, 2009-08-07 03:03
+
+Remember if you are not a fan of wild labels hanging around you are free to use braces in this construct creating a slightly cleaner look. Labels also are always executed and do not need to be called to have their associated code block ran. A purposeless example is below.
+
+<?php
+
+$headers = Array('subject', 'bcc', 'to', 'cc', 'date', 'sender');
+$position = 0;
+
+hIterator: {
+
+    $c = 0;
+    echo $headers[$position] . PHP_EOL;
+
+    cIterator: {
+        echo ' ' . $headers[$position][$c] . PHP_EOL;
+
+        if(!isset($headers[$position][++$c])) {
+            goto cIteratorExit;
+        }
+        goto cIterator;
+    }
+
+    cIteratorExit: {
+        if(isset($headers[++$position])) {
+            goto hIterator;
+        }
+    }
+}
+?>

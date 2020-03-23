@@ -1,0 +1,15 @@
+http://php.net/manual/en/control-structures.while.php
+
+Anonymous, 2015-04-23 05:56
+
+A cool way to keep evaluating something until it fails a test.
+
+<?php
+while (true) {
+  if ('test') { // is initial condition true
+    // do something that also changes initial condition
+  } else { // condition failed
+    break; // leave loop
+  }
+}
+?>

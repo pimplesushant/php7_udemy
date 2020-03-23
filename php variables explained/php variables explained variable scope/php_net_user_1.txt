@@ -1,0 +1,15 @@
+http://php.net/manual/en/language.variables.scope.php
+
+dodothedreamer at gmail dot com, 2011-09-25 11:56
+
+Note that unlike Java and C++, variables declared inside blocks such as loops or if's, will also be recognized and accessible outside of the block, so:
+<?php
+for($j=0; $j<3; $j++)
+{
+     if($j == 1)
+        $a = 4;
+}
+echo $a;
+?>
+
+Would print 4.

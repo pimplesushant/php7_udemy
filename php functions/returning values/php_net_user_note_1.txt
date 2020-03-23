@@ -1,0 +1,27 @@
+http://php.net/manual/en/functions.returning-values.php
+
+ryan dot jentzsch at gmail dot com, 2015-08-30 06:12
+
+PHP 7 return types if specified can not return a null.
+For example:
+<?php
+declare(strict_types=1);
+
+function add2ints(int $x, int $y):int
+{
+    $z = $x + $y;
+    if ($z===0)
+    {
+        return null;
+    }
+    return $z;
+}
+$a = add2ints(3, 4);
+echo is_null($a) ? 'Null' : $a;
+$b = add2ints(-2, 2);
+echo is_null($b) ? 'Null' : $b;
+exit();
+
+Output:
+7
+Process finished with exit code 139

@@ -1,0 +1,15 @@
+http://php.net/manual/en/control-structures.if.php
+
+robk, 2013-05-20 01:02
+
+easy way to execute conditional html / javascript / css / other language code with php if else:
+
+<?php if (condition): ?>
+
+html code to run if condition is true
+
+<?php else: ?>
+
+html code to run if condition is false
+
+<?php endif ?>

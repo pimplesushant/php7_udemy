@@ -1,0 +1,16 @@
+http://php.net/manual/en/language.basic-syntax.phpmode.php
+
+sgurukrupa at gmail dot com, 2014-03-10 07:01
+
+Although not specifically pointed out in the main text, escaping from HTML also applies to other control statements:
+
+<?php for ($i = 0; $i < 5; ++$i): ?>
+Hello, there!
+<?php endfor; ?>
+
+When the above code snippet is executed we get the following output:
+
+Hello, there!
+Hello, there!
+Hello, there!
+Hello, there!

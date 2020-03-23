@@ -1,0 +1,14 @@
+http://php.net/manual/en/control-structures.for.php
+
+matthiaz, 2012-02-08 02:37
+
+Looping through letters is possible. I'm amazed at how few people know that.
+
+for($col = 'R'; $col != 'AD'; $col++) {
+    echo $col.' ';
+}
+
+returns: R S T U V W X Y Z AA AB AC
+
+Take note that you can't use $col < 'AD'. It only works with !=
+Very convenient when working with excel columns.

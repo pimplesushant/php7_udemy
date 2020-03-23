@@ -1,0 +1,15 @@
+http://php.net/manual/en/language.types.array.php
+
+ken underscore yap atsign email dot com, 2008-01-09 08:00
+
+"If you convert a NULL value to an array, you get an empty array."
+
+This turns out to be a useful property. Say you have a search function that returns an array of values on success or NULL if nothing found.
+
+<?php $values = search(...); ?>
+
+Now you want to merge the array with another array. What do we do if $values is NULL? No problem:
+
+<?php $combined = array_merge((array)$values, $other); ?>
+
+Voila.

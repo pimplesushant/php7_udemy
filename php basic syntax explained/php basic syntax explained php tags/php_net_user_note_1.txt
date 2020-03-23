@@ -1,0 +1,9 @@
+http://php.net/manual/en/language.basic-syntax.phptags.php
+
+purkrt at gmail dot com, 2015-03-15 01:18
+
+I would like to stress out that the opening tag is "<?php[whitespace]", not just "<?php". While this might seem blatantly obvious, I thought for some time that
+
+<?php/*blah*/ echo "a"?>
+
+would work, and it does not; the comment does not work as whitespace. I've run into this while converting some older code with short open tag.

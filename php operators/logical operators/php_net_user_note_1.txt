@@ -1,0 +1,24 @@
+http://php.net/manual/en/language.operators.logical.php
+
+Lawrence, 2007-08-28 12:04
+
+Note that PHP's boolean operators *always* return a boolean value... as opposed to other languages that return the value of the last evaluated expression.
+
+For example:
+
+$a = 0 || 'avacado';
+print "A: $a\n";
+
+will print:
+
+A: 1
+
+in PHP -- as opposed to printing "A: avacado" as it would in a language like Perl or JavaScript.
+
+This means you can't use the '||' operator to set a default value:
+
+$a = $fruit || 'apple';
+
+instead, you have to use the '?:' operator:
+
+$a = ($fruit ? $fruit : 'apple');

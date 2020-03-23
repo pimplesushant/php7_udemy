@@ -1,0 +1,42 @@
+http://php.net/manual/en/control-structures.switch.php
+
+MaxTheDragon at home dot nl, 2012-06-14 02:29
+
+This is listed in the documentation above, but it's a bit tucked away between the paragraphs. The difference between a series of if statements and the switch statement is that the expression you're comparing with, is evaluated only once in a switch statement. I think this fact needs a little bit more attention, so here's an example:
+
+<?php
+$a = 0;
+
+if(++$a == 3) echo 3;
+elseif(++$a == 2) echo 2;
+elseif(++$a == 1) echo 1;
+else echo "No match!";
+
+// Outputs: 2
+
+$a = 0;
+
+switch(++$a) {
+    case 3: echo 3; break;
+    case 2: echo 2; break;
+    case 1: echo 1; break;
+    default: echo "No match!"; break;
+}
+
+// Outputs: 1
+?>
+
+It is therefore perfectly safe to do:
+
+<?php
+switch(winNobelPrizeStartingFromBirth()) {
+case "peace": echo "You won the Nobel Peace Prize!"; break;
+case "physics": echo "You won the Nobel Prize in Physics!"; break;
+case "chemistry": echo "You won the Nobel Prize in Chemistry!"; break;
+case "medicine": echo "You won the Nobel Prize in Medicine!"; break;
+case "literature": echo "You won the Nobel Prize in Literature!"; break;
+default: echo "You bought a rusty iron medal from a shady guy who insists it's a Nobel Prize..."; break;
+}
+?>
+
+without having to worry about the function being re-evaluated for every case. There's no need to preemptively save the result in a variable either.
